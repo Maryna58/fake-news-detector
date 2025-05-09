@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fake News Detector</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Виявлення Фейкових Новин</h1>
+        <form method="POST">
+          <textarea
+            name="text"
+            placeholder="Встав текст новини сюди..."
+            required
+          >
+{{ news_text or '' }}</textarea
+          >
+          <button type="submit">Перевірити</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+          <p><strong>Результат:</strong> {{ result }}</p>
+        </div>
+
+        <div class="highlighted-box">
+          <h3>Підсвічений текст (на основі LIME):</h3>
+          <div class="highlighted-text">{{ highlighted_text | safe }}</div>
+        </div>
+
+        <div class="lime-box">
+          <h3>Вплив слів / фраз на результат:</h3>
+          <table class="lime-table">
+            <thead>
+              <tr>
+                <th>Слово / фраза</th>
+                <th>Вплив (вага)</th>
+                <th>Сприяє</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for word, weight in explanation_details | sort(attribute=1,
+              reverse=true) %}
+              <tr>
+                <td>{{ word }}</td>
+                <td>{{ weight | round(3) }}</td>
+                <td>
+                  {% if weight > 0 %}
+                  <span style="color: green">Правдивій новині</span>
+                  {% else %}
+                  <span style="color: red">Фейковій новині</span>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

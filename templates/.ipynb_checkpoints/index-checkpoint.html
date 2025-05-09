@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fake News Detector</title>
+    <link <link rel="stylesheet" href="styles.css" />
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fake News Detector</h1>
+      <form method="post">
+        <textarea
+          name="text"
+          placeholder="Встав новину сюди..."
+          required
+        ></textarea
+        ><br />
+        <button type="submit">Перевірити</button>
+      </form>
+      {% if result %}
+      <div class="result"><strong>Результат:</strong> {{ result }}</div>
+      {% endif %}
+    </div>
+  </body>
+</html>

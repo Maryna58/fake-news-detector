@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.highlighted-box,
+.lime-box {
+  margin-top: 30px;
+  background: #f9fbff;
+  padding: 20px;
+  border-left: 6px solid #4a90e2;
+  border-radius: 8px;
+}
+
+.highlighted-text {
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+ul.lime-values {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Підсвітки для важливих слів */
+.highlight {
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.pos {
+  background-color: rgba(0, 200, 0, 0.25);
+}
+
+.neg {
+  background-color: rgba(200, 0, 0, 0.25);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  transition: 0.3s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  font-size: 16px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3b78c2;
+}
+
+.result-box {
+  margin-top: 30px;
+  text-align: left;
+  background: #f2f7ff;
+  padding: 20px;
+  border-left: 6px solid #4a90e2;
+  border-radius: 8px;
+}
+
+.result-text {
+  font-size: 18px;
+  color: #222;
+  white-space: pre-wrap;
+}
+
